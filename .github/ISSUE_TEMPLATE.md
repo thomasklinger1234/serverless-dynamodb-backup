@@ -7,8 +7,6 @@
 ## Current Behavior
 <!--- If describing a bug, tell us what happens instead of the expected behavior -->
 <!--- Include full errors, uncaught exceptions, stack traces, and relevant logs -->
-<!--- To turn on SDK logging, follow instructions here: http://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/java-dg-logging.html -->
-<!--- If service responses are relevant, please include wirelogs -->
 <!--- If suggesting a change/improvement, explain the difference from current behavior -->
 
 ## Possible Solution
