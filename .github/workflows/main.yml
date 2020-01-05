@@ -25,4 +25,4 @@ jobs:
         pip install -r requirements.dev.txt
     - name: Unit Tests
       run: |
-        pytest tests
+        make test
