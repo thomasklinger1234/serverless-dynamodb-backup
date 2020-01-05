@@ -4,6 +4,15 @@
 
 This is a serverless application for creating regular backups of all of your DynamoDB tables.
 
+In detail, this application does the following
+
+1. Call `ListTables` to get all DynamoDB tables
+2. For each table
+  2.1 Call `DescribeTable` to get the status
+  2.2 If the table status is `ACTIVE`, call `CreateBackup`
+
+The backup name is always `automatic-{isodate}`.
+
 **Important** Note that DynamoDB backups are creating charges on your AWS bill based on stored GBs. See the [Pricing](https://aws.amazon.com/dynamodb/pricing/) pages for on-demand on provisioned modes.
 
 ## Installation
@@ -47,3 +56,4 @@ In your SAM template add the following
 ## ToDo & Ideas
 
 - Add include or exclude filters for skipping table backups (useful for non-prod environments)
+- Make backup names configurable
