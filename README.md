@@ -1,5 +1,7 @@
 # serverless-dynamodb-backup
 
+![GitHubActionsBadge](https://github.com/thomasklinger1234/serverless-dynamodb-backup/workflows/Main/badge.svg)
+
 This is a serverless application for creating regular backups of all of your DynamoDB tables.
 
 **Important** Note that DynamoDB backups are creating charges on your AWS bill based on stored GBs. See the [Pricing](https://aws.amazon.com/dynamodb/pricing/) pages for on-demand on provisioned modes.
