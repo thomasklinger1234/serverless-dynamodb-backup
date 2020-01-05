@@ -25,7 +25,7 @@ class LambdaHandler(LoggingMixin):
         self.logger.info("received event [{}]".format(event))
 
         backup_id = datetime.datetime.utcnow().isoformat()
-        backup_name = f"automatic-{backup_id}"
+        backup_name = "automatic-{backup_id}".format(backup_id=backup_id)
 
         dynamodb = self.session.client("dynamodb")
 
