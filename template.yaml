@@ -30,7 +30,7 @@ Parameters:
     Description: If CodeDeploy will be activated (false by default).
   ScheduleExpression:
     Type: String
-    Default: rate(30 minutes)
+    Default: rate(6 hours)
     Description: The rate for the application to execute. Must be a valid CloudWatch expression.
   ScheduleStatus:
     Type: String

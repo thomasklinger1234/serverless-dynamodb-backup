@@ -48,7 +48,7 @@ In your SAM template add the following
         Parameters:
             DeploymentPreferenceType: AllAtOnce
             DeploymentEnabled: false
-            ScheduleExpression: rate(30 minutes)
+            ScheduleExpression: rate(6 hours)
             ScheduleStatus: ENABLED
             AlarmActions: []
 ```
