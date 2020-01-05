@@ -22,7 +22,7 @@ class LambdaHandler(LoggingMixin):
         self.session = session or boto3.Session()
 
     def handle_request(event, context):
-        self.logger.info(f"received event [{event}]")
+        self.logger.info("received event [{}]".format(event))
 
         backup_id = datetime.datetime.utcnow().isoformat()
         backup_name = f"automatic-{backup_id}"
@@ -42,14 +42,18 @@ class LambdaHandler(LoggingMixin):
                 if is_table_backupable(describe_table_result):
                     try:
                         self.logger.info(
-                            f"creating backup with id={backup_id} for table={table_name}"
+                            "creating backup with id={backup_id} for table={table_name}".format(
+                                backup_id=backup_id, table_name=table_name
+                            )
                         )
                         response = dynamodb.create_backup(
                             TableName=table_name, BackupName=backup_name
                         )
                     except botocore.exceptions.ClientError as e:
                         self.logger.warn(
-                            f"failed to create backup for table={table_name}: {e}"
+                            "failed to create backup for table={table_name}: {e}".format(
+                                table_name=table_name, e=e
+                            )
                         )
 
 
