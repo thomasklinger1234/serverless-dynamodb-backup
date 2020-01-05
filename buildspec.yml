@@ -5,11 +5,11 @@ phases:
   install:
     runtime-versions:
       python: 3.7
-    commands: 
+    commands:
       - pip install -r requirements.txt
       - pip install -r requirements.dev.txt
   pre_build:
-    commands: 
+    commands:
       - pytest tests
   build:
     commands: []

@@ -18,8 +18,8 @@ Metadata:
 
 Description: ""
 
-Parameters:   
-  DeploymentPreferenceType: 
+Parameters:
+  DeploymentPreferenceType:
     Type: String
     Default: AllAtOnce
     Description: The type of CodeDeploy deployment to perform during updates.
@@ -59,7 +59,7 @@ Globals:
         - !Ref FunctionErrorsLatestVersionAlarm
     Tags: {}
 
-Resources: 
+Resources:
   Function:
     Type: AWS::Serverless::Function
     Properties:
@@ -71,11 +71,11 @@ Resources:
         - Version: 2012-10-17
           Statement:
             - Effect: Allow
-              Action: 
+              Action:
                 - dynamodb:ListTables
               Resource: "*"
             - Effect: Allow
-              Action: 
+              Action:
                 - dynamodb:DescribeTable
                 - dynamodb:CreateBackup
               Resource: "*"
